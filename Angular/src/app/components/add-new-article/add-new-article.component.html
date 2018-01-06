@@ -1,0 +1,127 @@
+<div id="wrapper">
+	<section class="section single-wrap">
+		<div class="container">
+			<div class="page-title">
+				<div class="row">
+					<div class="col-sx-12 text-center">
+						<h3>Ajout article</h3>
+						<div class="bread">
+							<ol class="breadcrumb">
+							  <li><a href="#">Home</a></li>
+							  <li class="active">Upload</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			 
+
+			<div class="content-before">
+				<div class="row">
+					<div class="col-md-6 col-sx-12 cen-xs">
+						<form class="dropForm">
+							<div class="input-prepend">
+								<div class="btn-group">
+									<select name="orderby" class="selectpicker">
+									  <option>All Platforms</option>
+									  <option>IOS Apps</option>
+									  <option>Android Apps</option>
+									  <option>UI Kits</option>
+									  <option>Site Templates</option>
+									  <option>WordPress Themes</option>
+								  </select>
+								</div>
+								<input type="text" class="form-control" placeholder="Search anything here.">
+								<button class="btn btn-primary" tabindex="-1"><i class="fa fa-search"></i></button>
+							</div>
+						</form>
+					</div>
+				</div><!-- end row -->
+			</div><!-- end content before -->
+
+<div class="content boxs">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="widget-title">
+				<h4>Ajouter nouveau Item</h4>
+			</div>
+			<!-- end widget-title -->
+			<form (ngSubmit)="onSubmit()" class="uploaditem">
+				<div class="space">
+					<label>Category : </label>
+					<select class="selectpicker" name="catagorie" [(ngModel)]="newArticle.articleCategorie" data-live-search="true">
+						<option>Informatique</option>
+						<option>maison</option>
+						<option>voiture</option>
+						<option>autres</option>
+					 
+					</select>
+				</div>
+
+
+
+				<div class="space">
+					<label>Title : </label>
+					<input type="text" name="title" [(ngModel)]="newArticle.articleNom" class="form-control" placeholder="">
+				</div>
+
+				<div class="space">
+					<label>Details : </label>
+					<textarea name="description" [(ngModel)]="newArticle.articleDescription" name="description" class="form-control" placeholder=""></textarea>
+				</div>
+
+				<div class="space">
+					<label>Image</label>
+					<div class="fileupload fileupload-new" data-provides="fileupload">
+						<div class="fileupload-preview thumbnail"></div>
+						<br>
+						<span class="btn btn-primary btn-file">
+							<span class="fileupload-new">Select image</span>
+							<span class="fileupload-exists">Change</span>
+							<input (change)="selectFile($event)" type="file">
+						</span>
+						<a href="#" class="btn btn-primary fileupload-exists" data-dismiss="fileupload">Remove</a>
+					</div>
+				</div>
+
+
+			 
+			 
+
+				<div class="space">
+					<label>Prix d'article: </label>
+					<input type="number" name="prix" [(ngModel)]="newArticle.articlePrix" class="form-control" placeholder="">
+				</div>
+				<div class="space">
+					<label>Nombres d'articles: </label>
+					<input type="number" name="nombre" [(ngModel)]="newArticle.articleNumberDispo" class="form-control" placeholder="">
+				</div>
+
+
+				<div class="space">
+					<button  type="submit" class="btn btn-primary btn-block">Ajouter Article</button>
+				</div>
+
+			</form>
+		</div>
+		<!-- end col -->
+	</div>
+	<!-- end row -->
+</div>
+<!-- end content -->
+
+<br>
+
+                <div class="content-message boxs">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 text-center">
+                           
+                            
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content message -->
+            </div><!-- end container -->
+        </section>
+</div>
+

@@ -1,0 +1,51 @@
+
+ <header class="header">
+		<div class="container-menu">
+			<nav class="navbar navbar-default yamm">
+				<div class="container">
+					<div class="navbar-table">
+						<div class="navbar-cell">
+							<div class="navbar-header">
+								<a class="navbar-brand" href="/"><i class="fa fa-hashtag"></i> Catalog</a>
+								<div class="open-menu">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="fa fa-bars"></span>
+									</button>
+								</div>
+							</div><!-- end navbar-header -->
+						</div><!-- end navbar-cell -->
+						<div class="navbar-cell stretch">
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+								<div class="navbar-cell">
+									<ul class="nav navbar-nav navbar-center">
+										<li><a class="active" href="/" title="">Home</a></li>
+										<li><a   href="ListeArticle" title="">Liste Articles</a></li>
+										<li><a   href="recherche" title="">Chercher Articles</a></li>
+										<li  *ngIf="loggedIn && !Isvendeur" ><a   href="ListeFavoris" title="">Favoris</a></li>
+										<li  *ngIf="loggedIn &&  Isvendeur" ><a   href="articleList" title="">Mes Articles</a></li>
+										<li  *ngIf="loggedIn &&  Isvendeur" ><a   href="addNewArticle" title="">Ajouter Article</a></li>
+
+										
+									</ul>
+									
+									<ul class="nav navbar-nav navbar-right ">
+											<li *ngIf="!loggedIn" >	  <a href="myAccount"  ><span class="glyphicon glyphicon-user"></span>Incription</a> </li>
+												<li  *ngIf="!loggedIn" >	  <a   href="myAccount"> <span class="glyphicon glyphicon-log-in"></span>   Connexion </a> </li>
+													<li *ngIf="loggedIn" >	 <a (click)="logout()"  href="/"> <span class="glyphicon glyphicon-off"></span>   Déconnexion </a> </li>
+														<li *ngIf="loggedIn" >	  <a   href="ModifProfilAcheteur"> <span class="glyphicon glyphicon-cog"></span> compte </a> </li>
+														<li *ngIf="loggedIn && !Isvendeur" >	 <a href="/ListePanier"> <span class="glyphicon glyphicon-shopping-cart"></span>Panier </a> </li>
+
+
+									</ul>
+								</div><!-- end navbar-cell -->
+							</div><!-- /.navbar-collapse -->        
+						</div><!-- end navbar cell -->
+					</div><!-- end navbar-table -->
+				</div><!-- end container fluid -->
+			</nav><!-- end navbar -->
+		</div><!-- end container -->
+	</header>
+
+
+

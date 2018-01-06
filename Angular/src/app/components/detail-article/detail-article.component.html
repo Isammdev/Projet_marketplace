@@ -1,0 +1,188 @@
+ <section class="section single-wrap">
+           <div class="container">
+               <div class="page-title">
+                   <div class="row">
+                       <div class="col-sx-12 text-center" *ngIf="article">
+                           <h3>{{article.articleNom}}</h3>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="content-top">
+                   <div class="row">
+                       <div class="col-sx-6 col-sm-6">
+                           <div class="custommenu hidden-xs">
+                               <a id="showLeft" href="#" title="" class="bt-menu-trigger"><i class="fa fa-bars"></i> <img src="upload/fav.png" alt=""></a>
+                           </div>
+                       </div> 
+
+                       
+                   </div><!-- end row -->
+               </div><!-- end content top -->
+
+               <div class="row">
+                   <div id="singlewrapper" class="col-md-8">
+                       <div class="content-before">
+                           <div class="row">
+                               
+                           </div><!-- end row -->
+                       </div><!-- end content before -->
+
+                       <div class="content nopad">
+                           <div class="item-single-wrapper">
+                               <div class="item-box">
+                                   <div class="item-media text-center">
+                                       
+                                       <div id="carousel" class="flexslider clearfix" *ngIf="article">
+                                           
+                                               
+                                               <img [src]="'data:image/jpg;base64,'+article.photoArticle"  alt="" class="img-responsive" >
+                                           
+                                       </div>  
+
+
+
+                                   <div class="form-group row wow fadeIn" *ngIf="article">
+                                       <div class="col-sm-12 col-xs-12">
+                                           <div class="contact_form">
+                                               <div id="message"></div>
+                                               <form id="contactform" action="http://showwp.com/demos/catalog/app-version/contact.php" name="contactform" method="post">
+                                                   <textarea class="form-control" name="comments"                 [(ngModel)]="comm" id="comments" rows="6" placeholder="Message here..."></textarea>
+
+                                                   <button (click)="ajoutComm(article);" type="submit" value="SEND" id="submit" class="btn btn-primary"> Donnez votre avis</button>
+                                               </form> 
+                                           </div>
+                                       </div>
+                                   </div>
+                                   </div><!-- end item-media -->
+
+                                   
+                               </div><!-- end item-box -->
+                           </div><!-- end item-single-wrapper -->
+                       </div><!-- end content -->
+
+                       <div class="content-after boxs">
+                           
+                           <div class="row">
+                               <div class="col-md-4 col-sm-6">
+                                   <div class="item-box">
+                                       <div class="item-media entry">
+                                           <img src="upload/item_01.jpg" alt="" class="img-responsive">
+                                           <div class="magnifier">
+                                               <div class="item-author">
+                                                   <a href="public-profile.html"><img src="upload/member_01.jpg" class="img-circle" alt=""> Amanda</a>
+                                               </div><!-- end author -->
+                                           </div>
+                                           <div class="theme__button" *ngIf="article">
+                                               <p><a href="single-item.html" title="">{{article.articlePrix}} DT</a></p>
+                                           </div>
+                                       </div><!-- end item-media -->
+                                       
+                                   </div><!-- end item-box -->
+                               </div><!-- end col -->
+
+                               <div class="col-md-4 col-sm-6">
+                                   <div class="item-box">
+                                       <div class="item-media entry">
+                                           <img src="upload/item_02.jpg" alt="" class="img-responsive">
+                                           <div class="magnifier">
+                                               <div class="item-author">
+                                                   <a href="public-profile.html"><img src="upload/member_02.jpg" class="img-circle" alt=""> Bob</a>
+                                               </div><!-- end author -->
+                                           </div>
+                                           <div class="theme__button">
+                                               <p><a href="single-item.html" title="">$5</a></p>
+                                           </div>
+                                       </div><!-- end item-media -->
+                                       
+                                   </div><!-- end item-box -->
+                               </div><!-- end col -->
+
+                               <div class="col-md-4 col-sm-6">
+                                   <div class="item-box">
+                                       <div class="item-media entry">
+                                           <img src="upload/item_03.jpg" alt="" class="img-responsive">
+                                           <div class="magnifier">
+                                               <div class="item-author">
+                                                   <a href="public-profile.html"><img src="upload/member_03.jpg" class="img-circle" alt=""> Selena</a>
+                                               </div><!-- end author -->
+                                           </div>
+                                           <div class="theme__button">
+                                               <p><a href="single-item.html" title="">$5</a></p>
+                                           </div>
+                                       </div><!-- end item-media -->
+                                       
+                                   </div><!-- end item-box -->
+                               </div><!-- end col -->
+                           </div><!-- end row -->
+                       </div><!-- end content after -->
+                   </div><!-- end singlewrapper -->
+
+                   <div id="sidebar" class="col-md-4">
+                       <div class="boxes boxs">
+                           <div class="item-price text-center" *ngIf="article">
+                               <p>Prix: {{article.articlePrix}} DT</p>
+                              
+                               
+                               <a (click)="AjoutFavori(article)" class="btn btn-primary">Ajouter Favoris</a>
+                               <a (click)="AjouterPanier()"   class="btn btn-primary">Ajouter au panier</a>
+                               
+
+                               
+
+                           </div><!-- end price -->
+
+                       </div><!-- end boxes -->
+
+                       <div *ngIf="panier" class="boxes boxs">
+                       <li *ngIf="msg" >quantite insuffisant </li><br>
+                       <div class="btn-group">
+                                       <select name="orderby" [(ngModel)]="orderby" class="form-control"  >
+                                         <option>1</option>
+                                         <option>2</option>
+                                         <option>3</option>
+                                         <option>4</option>
+                                         <option>5</option>
+                                         
+                                     </select> 
+                                   </div><a  (click)="Valider()" class="btn btn-primary">Valider</a> </div> 
+
+
+
+                       <div class="boxes boxs">
+                           <div class="desiger-details text-center" *ngIf="article">
+                               <img  [src]="'data:image/jpg;base64,'+article.vendeur.avatarPersonne" class="img-circle" alt="">
+                               <h4><a href="public-profile.html">{{article.vendeur.personneNom}}</a></h4>
+                               <small><a href="#"><i class="fa fa-envelope-o"></i> envoyer un  Message</a> &nbsp;&nbsp; <a (click)="DetailArticle(article)"><i class="fa fa-user-plus"></i>Voir Profile  </a> </small>
+                           </div><!-- end designer -->
+
+
+                       </div><!-- end boxes -->
+
+                       <div class="boxes boxs">
+                           <div class="item-details" *ngIf="article">
+                               <table>
+                                   <tr>
+                                       <td>Nom</td>
+                                       <td>{{article.articleNom}}</td>
+                                   </tr>
+                                   <tr>
+                                       <td>Categorie</td>
+                                       <td>{{article.articleCategorie}}</td>
+                                   </tr>
+                                   <tr>
+                                       <td>Description</td>
+                                       <td>{{article.articleDescription}}</td>
+                                   </tr>
+                                   
+
+                               </table>
+                           </div><!-- end item-details -->
+                       </div><!-- end boxes -->
+                   </div><!-- end sidebar -->
+               </div><!-- end row -->
+
+               
+           </div><!-- end container -->
+
+       </section>

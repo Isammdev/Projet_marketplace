@@ -1,0 +1,118 @@
+<div id="wrapper">
+
+    <nav class="hidden-xs cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+        <h3><i class="fa fa-star-o"></i> Your Favorites</h3>
+        <ul>
+            <li>
+                <img src="upload/item_01.jpg" alt="" class="alignleft img-responsive">
+                <h4><a href="single-item.html">User Profile App</a></h4>
+                <small><a href="single-item.html"><i class="fa fa-eye"></i> 221</a></small>
+                <small><a href="single-item.html"><i class="fa fa-comment-o"></i> 05</a></small>
+            </li>
+            <li>
+                <img src="upload/item_02.jpg" alt="" class="alignleft img-responsive">
+                <h4><a href="single-item.html">Mail Application</a></h4>
+                <small><a href="single-item.html"><i class="fa fa-eye"></i> 435</a></small>
+                <small><a href="single-item.html"><i class="fa fa-comment-o"></i> 13</a></small>
+            </li>
+            <li>
+                <img src="upload/item_03.jpg" alt="" class="alignleft img-responsive">
+                <h4><a href="single-item.html">Showcase Podcast</a></h4>
+                <small><a href="single-item.html"><i class="fa fa-eye"></i> 551</a></small>
+                <small><a href="single-item.html"><i class="fa fa-comment-o"></i> 12</a></small>
+            </li>
+            <li>
+                <img src="upload/item_04.jpg" alt="" class="alignleft img-responsive">
+                <h4><a href="single-item.html">Login Box (Custom)</a></h4>
+                <small><a href="single-item.html"><i class="fa fa-eye"></i> 412</a></small>
+                <small><a href="single-item.html"><i class="fa fa-comment-o"></i> 55</a></small>
+            </li>
+        </ul>
+        <a href="shop-favorites.html" class="btn btn-primary">Go to Favorites</a>
+    </nav>
+
+   
+    <section class="section single-wrap">
+        <div class="container">
+
+
+
+
+
+            <div class="content boxs">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="page-content">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="widget">
+                                        <div class="widget-title">
+                                            <h4>Login</h4>
+                                        </div>
+                                        <!-- end widget-title -->
+
+                                        <div class="login-form">
+                                            <form method="post" action="#" role="login">
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" name="emailLogin" [(ngModel)]="emailLogin" required class="form-control" placeholder="" />
+                                                    <span class="fa fa-user"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input type="password" name="passwordLogin" [(ngModel)]="passwordLogin" required class="form-control" placeholder="" />
+                                                    <span class="fa fa-lock"></span>
+                                                </div>
+                                                <button (click)="onLogin()" type="submit" name="go" class="btn btn-primary">Login Account</button>
+                                            </form>
+                                        </div>
+                                        <!-- end login-form -->
+                                    </div>
+                                    <!-- end widget -->
+                                </div>
+                                <!-- end col -->
+
+                                <div class="col-md-8 col-sm-6">
+                                    <div class="widget">
+                                        <div class="widget-title">
+                                            <h4>Vous n'avez pas de compte? Inscrivez-vous aujourd'hui!</h4>
+                                        </div>
+                                        <!-- end widget-title -->
+
+                                        <div class="login-form">
+                                            <form method="post" action="#" role="login" class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Nom</label>
+                                                        <input type="text" name="username" required class="form-control" placeholder="" [(ngModel)]="username" />
+                                                        <span class="fa fa-user"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Email Address</label>
+                                                        <input type="email" name="email" required class="form-control" placeholder="" [(ngModel)]="email" />
+                                                        <span class="fa fa-envelope"></span>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-12">
+                                                    <button (click)="onNewAccount()" type="submit" name="go" class="btn btn-primary">Inscription</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- end login-form -->
+                                    </div>
+                                    <!-- end widget -->
+                                </div>
+                                <!-- end col -->
+                            </div>
+                            <!-- end row -->
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end content -->

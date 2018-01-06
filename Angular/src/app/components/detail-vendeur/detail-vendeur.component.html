@@ -1,0 +1,137 @@
+ <section class="section single-wrap">
+            <div class="container">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-sx-12 text-center">
+                            <h3>Detail vendeur</h3>
+                            <div class="bread">
+                                <ol class="breadcrumb">
+                                  <li><a href="#">Home</a></li>
+                                  <li><a href="#">Profile</a></li>
+                                  <li class="active">Edit Account</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-top">
+                    <div class="row">
+                        <div class="col-sx-6 col-sm-6">
+                            <div class="custommenu hidden-xs">
+                                <a id="showLeft" href="#" title="" class="bt-menu-trigger"><i class="fa fa-bars"></i> <img src="upload/fav.png" alt=""></a>
+                            </div>
+                        </div> 
+
+                        <div class="col-sm-6 col-xs-12 cen-xs text-right">
+                            <ul class="list-inline social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content top -->
+
+                <div class="content-before">
+                    <div class="row">
+                        <div class="col-md-6 col-sx-12 cen-xs">
+                            <form class="dropForm">
+                                <div class="input-prepend">
+                                    <div class="btn-group">
+                                        <select name="orderby" class="selectpicker">
+                                          <option>All Platforms</option>
+                                          <option>IOS Apps</option>
+                                          <option>Android Apps</option>
+                                          <option>UI Kits</option>
+                                          <option>Site Templates</option>
+                                          <option>WordPress Themes</option>
+                                      </select>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Search anything here.">
+                                    <button class="btn btn-primary" tabindex="-1"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content before -->
+
+                <div class="content boxs">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="widget-title">
+                                <h4>Profile Details</h4>
+                            </div><!-- end widget-title -->
+                            <form class="uploaditem">
+                                <div class="space">
+                                    <label>Upload Avatar</label>
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <img *ngIf="personne" [src]="'data:image/jpg;base64,'+personne.avatarPersonne" class="fileupload-preview thumbnail" />
+                                        <br>
+                                       
+                                         <span *ngIf="selectedFiles"  class="btn btn-primary" (click)="upload()" >Change</span>
+                                    </div>
+                                </div>
+
+                                <div class="space" *ngIf="personne">
+                                    <label>Nom :</label>
+                                    <input type="text"  disabled [(ngModel)]="personne.personneNom" class="form-control" value="" placeholder="Enter your name" name="nom">    
+                                </div>
+
+                                <div class="space" *ngIf="personne">
+                                    <label>Prenom : </label>
+                                    <input type="text"  disabled [(ngModel)]="personne.personnePrenom" class="form-control" placeholder="Enter your store name" name="prenom">    
+                                </div>
+
+                                <div class="space" *ngIf="personne">
+                                    <label>Email : </label>
+                                    <input type="text"  disabled [(ngModel)]="personne.personneMail" class="form-control" placeholder="Enter your email" name="email" >    
+                                </div>
+
+                                <div class="space" *ngIf="personne">
+                                    <label>Mobile : </label>
+                                    <input type="text"   disabled [(ngModel)]="personne.personneMobile" class="form-control" placeholder="Ex: America" name="mobile">    
+                                </div>
+
+                                <div class="space" *ngIf="personne">
+                                    <label>Adresse : </label>
+                                    <input type="text"  disabled [(ngModel)]="personne.personneAdresse" class="form-control" placeholder="http://" name="adresse">    
+                                </div>
+
+                                
+
+                                
+                            </form>
+                        </div><!-- end col -->
+
+                              <div class="col-md-8" *ngIf="personne">
+
+                            <label >Boutique </label>
+                             <form class="uploaditem">
+                                <div class="space" >
+                                    <label>Nom</label>
+                                    <input type="text"  disabled [(ngModel)]="personne.boutique.boutiqueNom" class="form-control" placeholder="" name="pass">    
+                                </div>
+
+                                <div class="space" >
+                                    <label>Adresse</label>
+                                    <input type="text"   disabled [(ngModel)]="personne.boutique.boutiqueAdresse" class="form-control" placeholder="" name="pass1">    
+                                </div>
+
+                                <button  (click)="message()"   class="btn btn-primary btn-block">Ajouter Article</button>
+
+
+                             </form></div>
+                       
+
+                    </div><!-- end row -->
+                </div><!-- end content -->
+
+                <br>
+
+               
+            </div><!-- end container -->
+        </section>

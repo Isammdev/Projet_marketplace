@@ -1,0 +1,97 @@
+
+ 		
+				 
+				
+			
+						
+
+<div class="container">
+ 
+
+
+	<div class="row" style="margin-top:30px;">
+		<div class="col-xs-3"></div>
+		<div class="col-xs-9">
+			<div class="panel-group">
+				<div class="panel panel-default panel-faq" style="border:none;">
+					<div class="panel-body" style="background-color: #ededed; margin-top:20px;">
+						<mat-tab-group>
+							<mat-tab label="Login">
+								<div style="margin-top:20px;">
+									<div *ngIf="loginError" style="color:red;">
+										Incorrect nom ou password.
+									</div>
+
+									<form (ngSubmit)="onLogin()">
+										<div class="form-group">
+											<label for ="username">Email *</label>
+											<input type="text" class="form-control" id="username" name="username" [(ngModel)]="credential.username" required="required" autofocus="autofocus">
+											<p style="color:#828282;">Enter your username</p>
+										</div>
+										<div class="form-group">
+											<label for ="password">Mot de pass *</label>
+											<input type="password" class="form-control" id="password" name="password" [(ngModel)]="credential.password" required="required" autofocus="autofocus">
+											<p style="color:#828282;">Enter your password</p>
+										</div>
+										<button mat-raised-button type="submit" class="mat-primary">Log In</button>
+									</form>
+								</div>
+							</mat-tab>
+							<mat-tab label="Incription">
+								<div style="margin-top: 20px;">
+									<div class="alert alert-info" *ngIf="emailSent">veuillez vérifier  votre  email  d'incription</div>
+									<form (ngSubmit)="onNewAccount()">
+										<div class="form-group">
+											<label for="newUsername">Nom *</label>&nbsp;<span *ngIf="usernameExists" style="color:red;">Email  existe  </span>
+											<input type="text" class="form-control" id="newUsername" name="username" [(ngModel)]="username" required="required" >
+											<p style="color:#828282;">Votre  Email</p>
+										</div>
+										<div class="form-group">
+											<label for="email">Email  *</label>&nbsp;<span *ngIf="emailExists" style="color:red;">Email already exists. Choose a different one.</span>
+											<input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required="required" >
+											<p style="color:#828282;">Email valide ..vérifier Email</p>
+										</div>
+										<div class="form-group">
+												
+										     <mat-radio-group  name="role" [(ngModel)]="role" >
+												<mat-radio-button  (click)="select('Acheteur')" value="Acheteur">Acheteur</mat-radio-button>
+												<mat-radio-button (click)="select('vendeur')" value="Vendeur">Vendeur</mat-radio-button>
+											  </mat-radio-group>
+											</div>
+											
+											<div   *ngIf="selectedvendeur"  class="form-group">
+													<div class="form-group">
+															<label for="boutiqueNom">Nom Boutiquee   *</label>&nbsp;<span *ngIf="usernameExists" style="color:red;">Email  existe  </span>
+															<input type="text" class="form-control" id="boutiqueNom" name="boutiqueNom" [(ngModel)]="boutiqueNom" required="required" >
+ 														</div>
+														<div class="form-group">
+															<label for="email">Adresse Boutiquee  *</label>&nbsp;<span *ngIf="emailExists" style="color:red;">Email existe.</span>
+															<input type="email" class="form-control" id="boutiqueAdresse" name="boutiqueAdresse" [(ngModel)]="boutiqueAdresse" required="required" >
+ 														</div>
+												</div>
+												
+										<button mat-raised-button type="submit" class="mat-primary">Créer nouveau compte</button>
+									</form>
+								</div>
+							</mat-tab>
+							<mat-tab label="Mot de passe oublié">
+								<div style="margin-top: 20px;">
+									<div class="alert alert-warning" *ngIf="emailNotExists">Email n'est  pas existé</div>
+									<div class="alert alert-success" *ngIf="forgetPasswordEmailSent">Email envoyé </div>
+									<form (ngSubmit)="onForgetPassword()">
+										<div class="form-group">
+											<label for="recoverEmail">Ton Email *</label>
+											<input type="email" class="form-control" id="recoverEmail" name="recoverEmail" [(ngModel)]="recoverEmail" required="required" >
+											<p style="color:#828282;">Entrer  email de  registration</p>
+										</div>
+										<button mat-raised-button type="submit" class="mat-primary">Envoyer</button>
+									</form>
+								</div>
+							</mat-tab>
+						</mat-tab-group>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

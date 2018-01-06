@@ -1,0 +1,167 @@
+<section class="section single-wrap">
+            <div class="container">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-sx-12 text-center">
+                            <h3>Edit Account</h3>
+                            <div class="bread">
+                                <ol class="breadcrumb">
+                                  <li><a href="#">Home</a></li>
+                                  <li><a href="#">Profile</a></li>
+                                  <li class="active">Edit Account</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-top">
+                    <div class="row">
+                        <div class="col-sx-6 col-sm-6">
+                            <div class="custommenu hidden-xs">
+                                <a id="showLeft" href="#" title="" class="bt-menu-trigger"><i class="fa fa-bars"></i> <img src="upload/fav.png" alt=""></a>
+                            </div>
+                        </div> 
+
+                        <div class="col-sm-6 col-xs-12 cen-xs text-right">
+                            <ul class="list-inline social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content top -->
+
+                <div class="content-before">
+                    <div class="row">
+                        <div class="col-md-6 col-sx-12 cen-xs">
+                            <form class="dropForm">
+                                <div class="input-prepend">
+                                    <div class="btn-group">
+                                        <select name="orderby" class="selectpicker">
+                                          <option>All Platforms</option>
+                                          <option>IOS Apps</option>
+                                          <option>Android Apps</option>
+                                          <option>UI Kits</option>
+                                          <option>Site Templates</option>
+                                          <option>WordPress Themes</option>
+                                      </select>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Search anything here.">
+                                    <button class="btn btn-primary" tabindex="-1"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content before -->
+
+                <div class="content boxs">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="widget-title">
+                                <h4>Profile Details</h4>
+                            </div><!-- end widget-title -->
+                            <form class="uploaditem">
+                                <div class="space">
+                                    <label>Upload Avatar</label>
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <img *ngIf="personne" [src]="'data:image/jpg;base64,'+personne.avatarPersonne" class="fileupload-preview thumbnail" />
+                                        <br>
+                                        <span class="btn btn-primary btn-file">
+                                            <span class="fileupload-new">Changer photo</span>
+                                           
+                                            <input type="file" (change)="selectFile($event)">
+                                        </span>
+
+                                         <span *ngIf="selectedFiles"  class="btn btn-primary" (click)="upload()" >Change</span>
+                                    </div>
+                                </div>
+
+                                <div class="space" *ngIf="personne">
+                                    <label>Nom :</label>
+                                    <input type="text" [(ngModel)]="personne.personneNom" class="form-control" value="" placeholder="Enter your name" name="nom">    
+                                </div>
+
+                                <div class="space" *ngIf="personne">
+                                    <label>Prenom : </label>
+                                    <input type="text" [(ngModel)]="personne.personnePrenom" class="form-control" placeholder="Enter your store name" name="prenom">    
+                                </div>
+
+                                <div class="space" *ngIf="personne">
+                                    <label>Email : </label>
+                                    <input type="text" [(ngModel)]="personne.personneMail" class="form-control" placeholder="Enter your email" name="email" >    
+                                </div>
+
+                                <div class="space" *ngIf="personne">
+                                    <label>Mobile : </label>
+                                    <input type="text" [(ngModel)]="personne.personneMobile" class="form-control" placeholder="Ex: America" name="mobile">    
+                                </div>
+
+                                <div class="space" *ngIf="personne">
+                                    <label>Adresse : </label>
+                                    <input type="text" [(ngModel)]="personne.personneAdresse" class="form-control" placeholder="http://" name="adresse">    
+                                </div>
+
+                                
+
+                                <div class="space">
+                                    <a (click)="updateProfil(personne)" class="btn btn-primary">Update Profile</a>
+                                </div>
+                            </form>
+                        </div><!-- end col -->
+
+                              <div class="col-md-8">
+
+                            <li *ngIf="msg" >Vérifier votre mot de passe </li>
+                             <form class="uploaditem">
+                                <div class="space" >
+                                    <label>Nouveau password: </label>
+                                    <input type="password"  [(ngModel)]="pass" class="form-control" placeholder="" name="pass">    
+                                </div>
+
+                                <div class="space" >
+                                    <label>Confirmer Nouveau password: </label>
+                                    <input type="password"  [(ngModel)]="pass1" class="form-control" placeholder="" name="pass1">    
+                                </div>
+
+                                 <div class="space">
+                                    <a (click)="updatePasword()" class="btn btn-primary">Changer Pasword</a>
+                                </div>
+
+                             </form></div>
+
+
+                             <div *ngIf="Isvendeur" class="col-md-8">
+
+                                 <form class="uploaditem">
+                                    <div class="space">
+                                        <label>Modifier Nom Boutique: </label>
+                                        <input type="text" [(ngModel)]="Nomb" class="form-control" placeholder="" name="Nomb">
+                                    </div>
+            
+                                    <div class="space">
+                                        <label>Adresse du boutique : </label>
+                                        <input type="text" [(ngModel)]="Adresseb" class="form-control" placeholder="" name="Addre">
+                                    </div>
+            
+                                    <div class="space">
+                                        <a (click)="updateBoutique()" class="btn btn-primary">Changer Boutique</a>
+                                    </div>
+            
+                                </form>
+                            </div>
+            
+                       
+
+                    </div><!-- end row -->
+                </div><!-- end content -->
+
+                <br>
+
+               
+            </div><!-- end container -->
+        </section>

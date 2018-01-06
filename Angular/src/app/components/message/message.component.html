@@ -1,0 +1,89 @@
+ 
+
+        <section class="section single-wrap">
+            <div class="container">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-sx-12 text-center">
+                            <h3>Messages</h3>
+                            <div class="bread">
+                                <ol class="breadcrumb">
+                                  <li><a href="#">Home</a></li>
+                                  <li class="active">Messages</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-top">
+                    <div class="row">
+                        <div class="col-sx-6 col-sm-6">
+                            <div class="custommenu hidden-xs">
+                                <a id="showLeft" href="#" title="" class="bt-menu-trigger"><i class="fa fa-bars"></i> <img src="upload/fav.png" alt=""></a>
+                            </div>
+                        </div> 
+
+                        <div class="col-sm-6 col-xs-12 cen-xs text-right">
+                            <ul class="list-inline social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content top -->
+ 
+
+                <div class="content boxs">
+
+               
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="storelist messages panel panel-info">
+                                <div class="panel-body">
+                                    <div class="form-group row wow fadeIn">
+                                        
+                                      
+                                    </div><!-- end form-group -->   
+
+                                
+
+                                    <div class="form-group row wow fadeIn">
+                                        <div class="col-sm-12 col-xs-12">
+                                            <div class="contact_form">
+                                                <div *ngIf="messageok" id="message"> message envoyé avec succés </div>
+
+                                          <input disabled type="text" name="title" [(ngModel)]="email" class="form-control" placeholder=""> 
+                                                <form id="contactform"   name="contactform" method="post">
+                                                    <input disable type="text" name="title" [(ngModel)]="titre" class="form-control" placeholder="">
+                                                    <textarea [(ngModel)]="object" class="form-control" name="comments" id="comments" rows="6" placeholder="Message here..."></textarea>
+                                                    <button type="submit" (click)="submit()" value="SEND" id="submit" class="btn btn-primary"> Envoyer</button>
+                                                </form> 
+                                            </div>
+                                        </div>
+                                    </div><!-- end form-group -->   
+                                </div><!-- end panel body -->
+                            </div><!-- end storelist -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end content -->
+
+                <br>
+
+                <div class="content-message boxs">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 text-center">
+                            
+                           
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content message -->
+            </div><!-- end container -->
+        </section>
+
+        

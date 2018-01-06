@@ -1,0 +1,130 @@
+ 
+<section class="section single-wrap">
+            <div class="container">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-sx-12 text-center">
+                            <h3>Recherche Avance</h3>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-top">
+                    <div class="row">
+                        <div class="col-sx-6 col-sm-6">
+                            <div class="custommenu hidden-xs">
+                                <a id="showLeft" href="#" title="" class="bt-menu-trigger"><i class="fa fa-bars"></i> <img src="upload/fav.png" alt=""></a>
+                            </div>
+                        </div> 
+
+                        <div class="col-sm-6 col-xs-12 cen-xs text-right">
+                            <ul class="list-inline social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content top -->
+
+                <div class="content-before">
+                    <div class="row">
+                        <div class="col-md-12 col-sx-12 cen-xs">
+                            <form class="dropForm">
+                                <div class="input-prepend">
+                                    
+                                        <input type="text" class="form-control" [(ngModel)]="articleFilter.articleCategorie" name="Boutique" placeholder="categorie">
+                                        <input type="text" class="form-control" [(ngModel)]="articleFilter.articlePrix" name="prix"  placeholder="Prix">
+
+                                        <input type="text" class="form-control" [(ngModel)]="articleFilter.articleDescription" name="Description"  placeholder="Description">
+                                   		 
+                                   	
+                                    
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 text-right hidden-xs">
+           
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content before -->
+
+
+
+                <div class="content boxs" *ngFor="let article of articles | filterBy: articleFilter  " >
+                    <div class="row">
+                        <div class="col-md-9 col-sm-12">
+                            <div class="storelist panel panel-info">
+                                <div class="panel-body">
+                                    <div class="form-group row wow fadeIn">
+                                        <div class="col-sm-2 col-xs-12">
+                                            <a href="single-item.html" class="screenshot" data-gal="upload/item_01.jpg" title="This is an item title <span>$12.00</span>"><img class="img-responsive img-thumbnail" [src]="'data:image/jpg;base64,'+article.photoArticle"  alt=""></a>
+                                        </div>
+                                        <div class="col-sm-7 col-xs-12">
+                                            <h4><a href="single-item.html">{{article.articleNom}}</a></h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-user"></i> Vendeur: {{article.vendeur.personneNom}}</a></li>
+                                                <li><a href="#"><i class="fa fa-envelope-o"></i>Categorie: {{article.articleCategorie}}</a></li>
+                                                <li><a href="#"><i class="fa fa-folder-open-o"></i>Prix: {{article.articlePrix}}DT </a></li>
+                                                <li><a href="#"><i class="fa fa-folder-open-o"></i>Description: {{article.articleDescription}} </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-12 text-center">
+                                            <ul>
+                                                <li><a (click)="DetailArticle(article);" class="btn btn-primary btn-block">Detail</a></li>
+                                                <li><a href="public-profile.html" title=""> Boutique {{article.vendeur.boutique.boutiqueNom}}</a></li>
+                                                <li>
+                                                    <div class="rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- end form-group -->       
+
+                                    
+
+                                    
+
+                                    
+      
+                                </div><!-- end panel-body -->
+                            </div><!-- end storelist -->
+                        </div><!-- end col -->
+
+                       
+                    </div><!-- end row -->
+                </div><!-- end content -->
+
+                <div class="content-after text-center boxs">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <nav class="pagination-wrapper">
+                                <ul class="pagination">
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content after -->
+
+                
+            </div><!-- end container -->
+        </section>

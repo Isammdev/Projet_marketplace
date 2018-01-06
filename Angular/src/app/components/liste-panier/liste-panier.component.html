@@ -1,0 +1,255 @@
+ <section class="section single-wrap">
+            <div class="container">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-sx-12 text-center">
+                            <h3>Checkout - Cart</h3>
+                            <div class="bread">
+                                <ol class="breadcrumb">
+                                  <li><a href="#">Home</a></li>
+                                  <li class="active">Checkout</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-top">
+                    <div class="row">
+                        <div class="col-sx-6 col-sm-6">
+                            <div class="custommenu hidden-xs">
+                                <a id="showLeft" href="#" title="" class="bt-menu-trigger"><i class="fa fa-bars"></i> <img src="upload/fav.png" alt=""></a>
+                            </div>
+                        </div> 
+
+                        <div class="col-sm-6 col-xs-12 cen-xs text-right">
+                            <ul class="list-inline social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content top -->
+
+                <div class="content-before">
+                    <div class="row">
+                        <div class="col-md-12 col-sx-12 cen-xs">
+                            <form class="dropForm">
+                                <div class="input-prepend">
+                                    <div class="btn-group">
+                                        <select name="orderby" class="selectpicker">
+                                          <option>All Platforms</option>
+                                          <option>IOS Apps</option>
+                                          <option>Android Apps</option>
+                                          <option>UI Kits</option>
+                                          <option>Site Templates</option>
+                                          <option>WordPress Themes</option>
+                                      </select>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Search anything here.">
+                                    <button class="btn btn-primary" tabindex="-1"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end content before -->
+
+                <div class="content boxs">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+
+                            <div class="row cart-body">
+                                <form class="form-horizontal" method="post">
+                                    <div class="col-lg-12 col-md-12">
+                                        <!--REVIEW ORDER-->
+                                        <div class="panel panel-info">
+                                            <div class="panel-heading">
+                                                Review Order
+                                            </div>
+
+                                            <div class="panel-body">
+
+
+                                                <div class="form-group" *ngFor="let panier of paniers" >
+                                                    <div class="col-sm-3 col-xs-3">
+                                                        <a href="single-item.html" class="screenshot" data-gal="upload/item_01.jpg" title="This is an item title <span>$12.00</span>"><img class="img-responsive img-thumbnail" [src]="'data:image/jpg;base64,'+paniers.article.photoArticle" alt=""></a>
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6">
+                                                        <div class="col-xs-12"><h4>{{panier.article.articleNom}}</h4></div>
+                                                        <div class="col-xs-12"><small>quantite: {{panier.nombreArticle}}</small></div>
+                                                    </div>
+                                                    <div class="col-sm-3 col-xs-3 text-right">
+                                                        <h6>{{panier.article.articlePrix}}<span> DT</span></h6>
+                                                    </div>
+                                                    <div class="col-sm-2 col-xs-2 text-right">
+                                                        <a (click)="Supprimer(panier);"><i class="fa fa-close"></i></a>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group"><hr /></div>
+                                                <div class="form-group">
+                                                    <div class="col-xs-12">
+                                                        <label>Total</label>
+                                                       <span>{{ getSum()   }} <span> DT</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--REVIEW ORDER END-->
+
+                                        <!--SHIPPING METHOD-->
+                                        <div class="panel panel-info">
+                                            <div class="panel-heading">Shipping Address</div>
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <div class="col-md-12"><label>Country:</label></div>
+                                                    <div class="col-md-12">
+                                                        <input [(ngModel)]="commande.country" type="text" class="form-control" name="country" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-6 col-xs-12">
+                                                        <label>First Name:</label>
+                                                        <input  [(ngModel)]="commande.firstName"  type="text" name="first_name" class="form-control" value="" />
+                                                    </div>
+                                                    <div class="span1"></div>
+                                                    <div class="col-md-6 col-xs-12">
+                                                        <label>Last Name:</label>
+                                                        <input type="text" [(ngModel)]="commande.lastName"  name="last_name" class="form-control" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12"><label>Address:</label></div>
+                                                    <div class="col-md-12">
+                                                        <input type="text" [(ngModel)]="commande.address"  name="address" class="form-control" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12"><label>City:</label></div>
+                                                    <div class="col-md-12">
+                                                        <input type="text"  [(ngModel)]="commande.city"  name="city" class="form-control" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12"><label>State:</label></div>
+                                                    <div class="col-md-12">
+                                                        <input type="text"   [(ngModel)]="commande.state"  name="state" class="form-control" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12"><label>Zip / Postal Code:</label></div>
+                                                    <div class="col-md-12">
+                                                        <input type="text"  [(ngModel)]="commande.zip"  name="zip_code" class="form-control" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12"><label>Phone Number:</label></div>
+                                                    <div class="col-md-12"><input  [(ngModel)]="commande.tel"  type="text" name="phone_number" class="form-control" value="" /></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12"><label>Email Address:</label></div>
+                                                    <div class="col-md-12"><input  [(ngModel)]="commande.email"  type="text" name="email_address" class="form-control" value="" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--SHIPPING METHOD END-->
+
+                                        <!--CREDIT CART PAYMENT-->
+                                        <div class="panel panel-info">
+                                            <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment</div>
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <div class="col-md-6"><label>Card Type:</label></div>
+                                                    <div class="col-md-6">
+                                                        <select name="orderby"  [(ngModel)]="commande.type"   class="selectpicker">
+                                                            <option value="Visa">Visa</option>
+                                                            <option value="MasterCard">MasterCard</option>
+                                                            <option value="American Express">American Express</option>
+                                                         </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-6"><label>Credit Card Number:</label></div>
+                                                    <div class="col-md-6"><input type="text" [(ngModel)]="commande.credit" class="form-control" name="car_number" value="" /></div>
+                                                </div>
+                                                 
+                                                <div class="form-group">
+                                                    <div class="col-md-6"><label>Select Month:</label></div>
+                                                    <div class="col-md-6">
+                                                            <select name="orderby" [(ngModel)]="commande.month" class="selectpicker">
+                                                              <option>Month</option>
+                                                              <option>01</option>
+                                                              <option>02</option>
+                                                              <option>03</option>
+                                                              <option>04</option>
+                                                              <option>05</option>
+                                                              <option>06</option>
+                                                              <option>07</option>
+                                                              <option>08</option>
+                                                              <option>09</option>
+                                                              <option>10</option>
+                                                              <option>11</option>
+                                                              <option>12</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-6"><label>Select Year:</label></div>
+                                                    <div class="col-md-6">
+                                                            <select name="orderby" [(ngModel)]="commande.year" class="selectpicker">
+                                                              <option>Year</option>
+                                                              <option>2016</option>
+                                                              <option>2017</option>
+                                                              <option>2018</option>
+                                                              <option>2019</option>
+                                                              <option>2020</option>
+                                                              <option>2021</option>
+                                                              <option>2022</option>
+                                                              <option>2023</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-6">
+                                                        <p>Pay secure using your credit card.</p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="payment-methods">
+                                                            <ul class="list-inline text-left">
+                                                                <li><a href="#"><img src="upload/payment_01.png" alt=""></a></li>
+                                                                <li><a href="#"><img src="upload/payment_02.png" alt=""></a></li>
+                                                                <li><a href="#"><img src="upload/payment_03.png" alt=""></a></li>
+                                                                <li><a href="#"><img src="upload/payment_04.png" alt=""></a></li>
+                                                                <li><a href="#"><img src="upload/payment_05.png" alt=""></a></li>
+                                                                <li><a href="#"><img src="upload/payment_06.png" alt=""></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="form-group">
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <button type="submit" (click)="payer()" class="btn custombutton button--isi btn-primary">Place Order</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--CREDIT CART PAYMENT END-->
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end content -->
+
+                <br>
+
+                
+            </div><!-- end container -->
+        </section>
